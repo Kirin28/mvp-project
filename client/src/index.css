@@ -1,11 +1,3 @@
 body {
-    background-color: #F5F5F5;
+    background-color: #F7EEEC;
   } 
-  .navcolor {
-    position: absolute;
-    width: 3000px;
-    height: 80px;
-    left: 0px;
-    top: 0px;
-    background-color: white;
-}
