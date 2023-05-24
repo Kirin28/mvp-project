@@ -37,7 +37,7 @@ router.post("/", async function(req, res, next) {
   }
 }); 
 
-//search by keyword
+/* //search by keyword
 router.get('/', async function (req, res, next) {
   const keyword = req.query.keyword;
   try {
@@ -46,7 +46,7 @@ router.get('/', async function (req, res, next) {
   } catch {
     res.status(500).send(error);
   }
-})
+}) */
 
 module.exports = router;
 //get keyword by id

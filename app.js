@@ -7,6 +7,7 @@ const cors = require('cors');
 var indexRouter = require('./routes/index');
 var workoutsRouter = require('./routes/workouts');
 var searchRouter = require('./routes/search');
+var keyRouter = require('./routes/keywords');
 
 var app = express();
 
@@ -20,5 +21,6 @@ app.use(cookieParser());
 app.use('/api', indexRouter);
 app.use('/api/workouts', workoutsRouter);
 app.use('/api/search', searchRouter);
+app.use('/api/keywords', keyRouter);
 
 module.exports = app;
