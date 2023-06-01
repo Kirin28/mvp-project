@@ -12,9 +12,6 @@ export default function Admin() {
     const [errorMessage, setErrorMessage] = useState("");
 
 
-    useEffect(() => {
-        getWorkouts();
-      }, []);
     
       const getWorkouts = () => {
         fetch("/api/workouts")
@@ -27,10 +24,13 @@ export default function Admin() {
           });
       };
 
-      const handleInputChange = event => {
-        const value = event.target.value;
-        const name = event.target.name;
-        setPosts((prevState) => ({ ...prevState, [name]: value }));
+      useEffect(() => {
+        getWorkouts();
+      }, []);
+     
+      const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setPosts((prevValues) => ({ ...prevValues, [name]: value }));
       };
 
       const handleSubmit = async event => {
@@ -77,46 +77,99 @@ export default function Admin() {
       return (
         <>
         <div className='container py-2'>
-        <h1 className='text-bold'>Admin View</h1>
-        </div>
-
-
+        <h1 className='text-bold mt-2'>Admin Page</h1>
+       
+<h4 className='text-bold py-2'>Instructions</h4>
+<div className='row'>
+  <div className='col-sm-8'>
+<ol>
+  <li className='fw-normal'>Provide a descriptive title for the workout video.</li>
+  <li>Copy the URL of the video you want to add and paste it to the input.</li>
+  <li>Extract the Video ID from the URL using the following steps:</li>
+  <ol type="a">
+    <li>Open the video URL in your browser.</li>
+    <li>Look for the section of the URL that contains a series of characters after "embed/" or "v=". For example, if the URL is "https://www.example.com/abcdefg," or "https://www.example.com/watch?v=abcdefg" the Video ID is "abcdefg".</li>
+    <li>Copy the Video ID for later use.</li>
+  </ol>
+  <li>Indicate the duration of the workout video in minutes.</li>
+  <li>Mention the estimated number of calories burned during the workout.</li>
+</ol>
+</div>
+</div>
         <form className="container-md py-2" onSubmit={e => handleSubmit(e)}>
+          
         
-              <div className="form-floating">
+              <div className="mb-3">
+              <label htmlFor="title" className='form-label'>1. Workout Title</label>
                 <input
-                  id="floatingInput"
-                  className="form-control my-1"
+                  id="title"
+                  className="form-control"
                   value={posts.title}
                   name="title"
                   onChange={e => handleInputChange(e)}
                   type="text"
                 />
-                <label htmlFor="floatingInput">Workout Title</label>
               </div>
            
             
-              <div className="form-floating">
+              <div className="mb-3">
+              <label htmlFor="url" className='form-label'>2. URL</label>
                 <input
-                  id="floatingName"
+                id="url"
                   value={posts.url}
-                  className="form-control my-1"
+                  className="form-control"
                   name="url"
                   onChange={e => handleInputChange(e)}
                   type="text"
                 />
-                <label htmlFor="floatingName">URL</label>
               </div>
-       
-        
-          <div style={{ textAlign: "center" }}>
-            <button className="btn btn-primary my-2 px-3">Add</button>
+
+
+              <div className="mb-3">
+              <label htmlFor="embedID" className='form-label'>3. Video ID</label>
+                <input
+                id="embedID"
+                  value={posts.embedID}
+                  className="form-control"
+                  name="embedID"
+                  onChange={e => handleInputChange(e)}
+                  type="text"
+                />
+              </div>
+
+              <div className="mb-3">
+              <label htmlFor="minutes" className='form-label'>4. Minutes</label>
+                <input
+                id="minutes"
+                  value={posts.minutes || ''}
+                  className="form-control"
+                  name="minutes"
+                  onChange={e => handleInputChange(e)}
+                  type="number"
+                />
+              </div>
+
+              <div className="mb-3">
+              <label htmlFor="calories" className='form-label'>5. Calories</label>
+                <input
+                id="calories"
+                  value={posts.calories || ''}
+                  className="form-control"
+                  name="calories"
+                  onChange={e => handleInputChange(e)}
+                  type="number"
+                />
+              </div>
+          <div>
+            <button className="btn btn-danger my-2 px-3">Add</button>
           </div>
+         
 
           <p style={{ textAlign: "center", fontSize: "80%", color: "red" }}>
             {errorMessage}
           </p>
         </form>
+        </div>
         </>
       )
 }

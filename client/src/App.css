@@ -45,3 +45,20 @@
     
 }
 
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover{
+  color: rgb(114, 110, 110);
+  }
+
+.gym-img {
+width: 300px;
+height: 100%;
+object-fit: cover;
+}
+.round-2 {
+  border-radius: 10px;
+}
