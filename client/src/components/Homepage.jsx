@@ -13,9 +13,9 @@ export default function Homepage() {
   const [results, setResults] = useState ([]);
   const [error, setError] = useState("");
 
-  const history = useNavigate();
+  const navigate = useNavigate();
 
-  const getWorkouts =  async () => { //debounce removed
+  const getWorkouts =  async () => { 
     try {
       setError (null);
       const response = await axios.get (`/api/search/?keyword=${query}`);
@@ -23,7 +23,7 @@ export default function Homepage() {
     } catch (err) {
       setError (err.message);
     }
-  }; // delay the execution?
+  }; 
 
 
 
@@ -36,16 +36,14 @@ export default function Homepage() {
     setQuery("");
     setError("");
   }
-  history.push('/search');
+  navigate(`/search/${query}`);
   };
 
 
 
 const handleInputChange = (e) => {
 const value = e.target.value;
-
 setQuery(value);
-
   };
 
   return (
@@ -107,12 +105,9 @@ setQuery(value);
 
      </div>
      
-
+<div className='mb-4'></div>
 
      </div>
-        {results.length > 0 && (
-            <SearchResults query={query} results={results} getWorkouts={getWorkouts} handleSubmit={handleSubmit} handleInputChange={handleInputChange} error={error} setError={setError}/>
-        )}
        
     </>
   )

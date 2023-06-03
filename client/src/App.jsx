@@ -7,10 +7,46 @@ import Admin from './components/Admin';
 import Homepage from './components/Homepage';
 import { Routes, Route, Link, useParams } from "react-router-dom";
 import SearchResults from './components/SearchResults';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
 
-  //let { keyword } = useParams()
+  const [query, setQuery] = useState ("");
+  const [results, setResults] = useState ([]);
+  const [error, setError] = useState("");
+
+  const { key } = useParams();
+
+  const navigate = useNavigate();
+
+  const getWorkouts =  async () => { 
+    try {
+      setError (null);
+      const response = await axios.get (`/api/search/?keyword=${query}`);
+      setResults(response.data);
+    } catch (err) {
+      setError (err.message);
+    }
+  }; 
+
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+  if (!query) {
+    setError("Please fill out the search field.")
+  } else {
+    getWorkouts();
+    setQuery("");
+    setError("");
+  }
+  navigate(`/search/${query}`);
+  };
+
+
+  const handleInputChange = (e) => {
+  const value = e.target.value;
+  setQuery(value);
+    };
 
   return (
     <>
@@ -38,7 +74,7 @@ function App() {
       </footer>
 <Routes>
   <Route path="/" element={<Homepage/>} />
-  <Route path='/search/' element={<SearchResults/>}/>
+  <Route path='/search/:query' element={<SearchResults query={query} results={results} handleSubmit={handleSubmit} handleInputChange={handleInputChange} error={error} setError={setError} navigate={navigate} getWorkouts={getWorkouts}/>}/>
   <Route path="/workouts" element={<ListWorkouts/>} />
   <Route path="/admin" element={<Admin/>} />
 </Routes>
@@ -49,3 +85,4 @@ function App() {
 }
 
 export default App
+//point of no return

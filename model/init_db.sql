@@ -5,6 +5,14 @@ CREATE TABLE workouts(id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, title VARCHAR(
 
 CREATE TABLE keywords(id INT PRIMARY KEY AUTO_INCREMENT, text VARCHAR(100));
 
+CREATE TABLE workout_keyword(
+id INT PRIMARY KEY NOT NULL AUTO_INCREMENT, 
+WorkoutID INT, 
+KeywordID INT,
+FOREIGN KEY (WorkoutID) REFERENCES workouts (id),
+FOREIGN KEY (KeywordID) REFERENCES keywords (id)
+);
+
 
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("High Impact Kickboxing Workout", "https://youtu.be/qGuAQX39y6E", "qGuAQX39y6E", 23, 180, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Gentle Yoga Flow", "https://youtu.be/ZvQ-5ad-6Qo", "ZvQ-5ad-6Qo", 20, 100, 0);
@@ -53,4 +61,4 @@ INSERT INTO keywords(text) VALUES("HIIT");
 INSERT INTO keywords(text) VALUES("High Impact");
 
 
-
+INSERT INTO workout_keyword (WorkoutID, KeywordID) VALUES (1, 1), (15, 1), (2, 2), (5, 2), (8, 2), (9, 2), (10, 2), (11, 2), (12, 2), (21, 2), (24, 2), (3, 3), (14, 3), (17, 3), (4, 4), (10, 4), (25, 4), (26, 4), (16, 5), (18, 5), (22, 6), (5, 7), (12, 7), (13, 8), (27, 8), (17, 9), (23, 9), (19, 10), (23, 10), (4, 11), (7, 11), (20, 11), (26, 11), (1, 12), (9, 12);
