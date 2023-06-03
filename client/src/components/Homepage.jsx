@@ -7,13 +7,13 @@ import axios from 'axios';
 import SearchResults from './SearchResults';
 import { useNavigate } from 'react-router-dom';
 
-export default function Homepage() {
+export default function Homepage({results, setResults}) {
 
+  const navigate = useNavigate();  
   const [query, setQuery] = useState ("");
-  const [results, setResults] = useState ([]);
+  //const [results, setResults] = useState ([]);
   const [error, setError] = useState("");
 
-  const navigate = useNavigate();
 
   const getWorkouts =  async () => { 
     try {
@@ -35,8 +35,8 @@ export default function Homepage() {
     getWorkouts();
     setQuery("");
     setError("");
+    navigate('/search');
   }
-  navigate(`/search/${query}`);
   };
 
 
@@ -74,6 +74,7 @@ setQuery(value);
      <img className='img-fluid round py-3 my-3 homeimage' src={homeimage} alt="Homepage" />
 
 <br />
+<div className='container'>
 <div className='row pt-2'>
   <div className='col-lg-4 py-1'>
   <div className="card" style={{width: "18rem"}}>
@@ -103,6 +104,7 @@ setQuery(value);
 </div>
   </div>
 
+     </div>
      </div>
      
 <div className='mb-4'></div>

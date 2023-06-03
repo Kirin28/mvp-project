@@ -5,48 +5,12 @@ import logo from './assets/logo.png';
 import { Navbar, Nav, Container, Row } from 'react-bootstrap';
 import Admin from './components/Admin';
 import Homepage from './components/Homepage';
-import { Routes, Route, Link, useParams } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import SearchResults from './components/SearchResults';
-import { useNavigate } from 'react-router-dom';
 
 function App() {
 
-  const [query, setQuery] = useState ("");
   const [results, setResults] = useState ([]);
-  const [error, setError] = useState("");
-
-  const { key } = useParams();
-
-  const navigate = useNavigate();
-
-  const getWorkouts =  async () => { 
-    try {
-      setError (null);
-      const response = await axios.get (`/api/search/?keyword=${query}`);
-      setResults(response.data);
-    } catch (err) {
-      setError (err.message);
-    }
-  }; 
-
-
-  const handleSubmit = async event => {
-    event.preventDefault();
-  if (!query) {
-    setError("Please fill out the search field.")
-  } else {
-    getWorkouts();
-    setQuery("");
-    setError("");
-  }
-  navigate(`/search/${query}`);
-  };
-
-
-  const handleInputChange = (e) => {
-  const value = e.target.value;
-  setQuery(value);
-    };
 
   return (
     <>
@@ -61,7 +25,8 @@ function App() {
           <Link className='link text-bold mx-2 fs-5' to="/">Home</Link>
             <Link className='link text-bold mx-2 fs-5' to="/workouts">Workouts</Link>
             <Link className='link text-bold mx-2 fs-5' href="#">My progress</Link>
-            <Link className='link text-bold mx-2 fs-5' to="/admin">Admin</Link>
+            <Link className='link text-bold mx-2 fs-5' to="/admin">Admin</Link> 
+            <Link className='link text-bold mx-2 fs-5' to="/search">Search</Link>
           </Nav>
         </Navbar.Collapse>
         </div>
@@ -73,8 +38,8 @@ function App() {
 </div>
       </footer>
 <Routes>
-  <Route path="/" element={<Homepage/>} />
-  <Route path='/search/:query' element={<SearchResults query={query} results={results} handleSubmit={handleSubmit} handleInputChange={handleInputChange} error={error} setError={setError} navigate={navigate} getWorkouts={getWorkouts}/>}/>
+  <Route path="/" element={<Homepage results={results} setResults={setResults}/>} />
+  <Route path='/search' element={<SearchResults results={results} setResults={setResults}/>}/>
   <Route path="/workouts" element={<ListWorkouts/>} />
   <Route path="/admin" element={<Admin/>} />
 </Routes>
@@ -85,4 +50,3 @@ function App() {
 }
 
 export default App
-//point of no return
