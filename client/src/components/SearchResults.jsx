@@ -1,50 +1,9 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
-export default function SearchResults() { //props from the app?
 
-    const [query, setQuery] = useState ("");
-    const [results, setResults] = useState ([]); 
-    const [error, setError] = useState("");
-    const [posts, setPosts] = useState({
-        title: "",
-        url: "",
-        embedID: "",
-        minutes: null,
-        calories: null,
-    });
-    const getWorkouts =  async () => { //debounce removed
-      try {
-        setError (null);
-        const response = await axios.get (`/api/search/?keyword=${query}`);
-        setResults(response.data);
-      } catch (err) {
-        setError (err.message);
-      }
-    }; // delay the execution?
-  
-  
-  
-    const handleSubmit = async event => {
-      event.preventDefault();
-    if (!query) {
-      setError("Please fill out the search field.")
-    } else {
-      getWorkouts();
-      setQuery("");
-      setError("");
-    }
-        
-    };
-  
-  
-  
-  const handleInputChange = (e) => {
-  const value = e.target.value;
-  
-  setQuery(value);
-  
-    };
+export default function SearchResults({query, results, getWorkouts, handleSubmit, handleInputChange, error, setError}) { 
+
 
 return (
   <div className='container'>

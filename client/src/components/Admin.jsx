@@ -161,13 +161,12 @@ export default function Admin() {
                 />
               </div>
           <div>
-            <button className="btn btn-danger my-2 px-3">Add</button>
-          </div>
-         
-
-          <p style={{ textAlign: "center", fontSize: "80%", color: "red" }}>
+            <button className="btn btn-danger my-2 px-3 mb-4">Add</button>
+            <p className='pb-4 mb-4 pt-1' style={{ textAlign: "center", fontSize: "80%", color: "red" }}>
             {errorMessage}
           </p>
+          </div>
+         
         </form>
         </div>
         </>

@@ -5,14 +5,15 @@ import grainimage from './assets/group_2.2.png'
 import gymimage2 from './assets/group_2.3.png'
 import axios from 'axios';
 import SearchResults from './SearchResults';
-
+import { useNavigate } from 'react-router-dom';
 
 export default function Homepage() {
 
   const [query, setQuery] = useState ("");
   const [results, setResults] = useState ([]);
+  const [error, setError] = useState("");
 
-
+  const history = useNavigate();
 
   const getWorkouts =  async () => { //debounce removed
     try {
@@ -35,7 +36,7 @@ export default function Homepage() {
     setQuery("");
     setError("");
   }
-      
+  history.push('/search');
   };
 
 
@@ -80,7 +81,7 @@ setQuery(value);
   <div className="card" style={{width: "18rem"}}>
   <img src={gymimage}  style={{height: "100%"}} className="card-img-top" alt="..."/>
   <div className="card-body " style={{height: "200px"}}>
-    <em><p className="card-text">Welcome to Forever Active, your ultimate destination for fitness enthusiasts! Our homepage offers a comprehensive collection Adidas and Nike workout videos right at your fingertips.</p></em>
+    <p className="card-text fw-semibold">Welcome to Forever Active, your ultimate destination for fitness enthusiasts! Our homepage offers a comprehensive collection Adidas and Nike workout videos right at your fingertips.</p>
   </div>
 </div>
   </div>
@@ -90,7 +91,7 @@ setQuery(value);
   <div className="card" style={{width: "18rem"}}>
   <img src={grainimage} style={{height: "100%"}} className="card-img-top" alt="..."/>
   <div className="card-body" style={{height: "200px"}}>
-    <em><p className="card-text">Once you've found your ideal workout video, you can watch it directly on our website. Alternatively, we provide a convenient redirection to YouTube, allowing you to access the video on their platform if you prefer.</p></em>
+    <p className="card-text fw-semibold">Once you've found your ideal workout video, you can watch it directly on our website. Alternatively, we provide a convenient redirection to YouTube, allowing you to access the video on their platform if you prefer.</p>
   </div>
 </div>
     </div>
@@ -99,7 +100,7 @@ setQuery(value);
     <div className="card" style={{width: "18rem"}}>
   <img src={gymimage2} style={{height: "223px"}} className="card-img-top" alt="..."/>
   <div className="card-body" style={{height: "200px"}}>
-    <em><p className="card-text">Join our community of fitness enthusiasts and take your workout journey to new heights. Embrace the power of exercise, challenge yourself, and achieve your fitness goals with our comprehensive workout video library!</p></em>
+    <p className="card-text fw-semibold">Join our community of fitness enthusiasts and take your workout journey to new heights. Embrace the power of exercise, challenge yourself, and achieve your fitness goals with our comprehensive workout video library!</p>
   </div>
 </div>
   </div>
@@ -109,8 +110,10 @@ setQuery(value);
 
 
      </div>
-    
-        <SearchResults />
+        {results.length > 0 && (
+            <SearchResults query={query} results={results} getWorkouts={getWorkouts} handleSubmit={handleSubmit} handleInputChange={handleInputChange} error={error} setError={setError}/>
+        )}
+       
     </>
   )
 }
