@@ -7,6 +7,7 @@ import Admin from './components/Admin';
 import Homepage from './components/Homepage';
 import { Routes, Route, Link } from "react-router-dom";
 import SearchResults from './components/SearchResults';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -26,17 +27,10 @@ function App() {
             <Link className='link text-bold mx-2 fs-5' to="/workouts">Workouts</Link>
             <Link className='link text-bold mx-2 fs-5' href="#">My progress</Link>
             <Link className='link text-bold mx-2 fs-5' to="/admin">Admin</Link> 
-            <Link className='link text-bold mx-2 fs-5' to="/search">Search</Link>
           </Nav>
         </Navbar.Collapse>
         </div>
       </Navbar>
-
-      <footer>
-      <div className="text-center py-2 mt-4 fixed-bottom" style={{backgroundColor: "white"}}>
-      &copy; {new Date().getFullYear()} Forever Active
-</div>
-      </footer>
 <Routes>
   <Route path="/" element={<Homepage results={results} setResults={setResults}/>} />
   <Route path='/search' element={<SearchResults results={results} setResults={setResults}/>}/>
@@ -44,9 +38,18 @@ function App() {
   <Route path="/admin" element={<Admin/>} />
 </Routes>
   
-
+<div className="myFooter">
+        <main></main>
+      <Footer />
+      </div>
     </>
   )
 }
 
 export default App
+
+{/* <footer>
+      <div className="text-center py-2 mt-4 fixed-bottom" style={{backgroundColor: "white"}}>
+      &copy; {new Date().getFullYear()} Forever Active
+</div>
+      </footer> */}

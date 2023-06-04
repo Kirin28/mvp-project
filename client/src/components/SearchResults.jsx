@@ -45,9 +45,10 @@ return (
   <div className='container pt-4'>
   <div className='row'>
   <div className='col'>
- <h1 className='text-bold'>Search results</h1>
+ <h1 className='text-bold'>Search Results</h1>
  </div>
  <div className='col pt-2'>
+  <form onSubmit={handleSubmit}>
  <div className="input-group mb-3">
 <input  
 value={query}
@@ -55,19 +56,19 @@ onChange={handleInputChange}
 type="search" 
 className="form-control border border-secondary shadow-none py-2" placeholder="Search..." aria-label="Search..." aria-describedby="button-addon2"/>
 <button
-onClick={handleSubmit} 
 className="button-white btn btn-outline-secondary" type="button" id="button-addon2">
 <i className="fas fa-search"></i>
 </button>
 </div>
+</form>
  </div>
 
  </div>
-
  {error && <p style={{color: "red", fontSize: "80%"}}>{error}</p>}
         <div className='container py-2'>
             <div className='row'>
-              {results.length > 0 && results.map((r) => (
+              {results.length > 0 ? (
+                results.map((r) => (
                 <div key={r.WorkoutID} className='col-md-4'>
                   <div className="card mb-3">
               <div className="card-body">
@@ -82,7 +83,11 @@ className="button-white btn btn-outline-secondary" type="button" id="button-addo
             </div>
           </div>
         
-              ))}
+              ))
+              ) : (
+                <p>No results found.</p>
+              )
+            }
             </div>
          
             </div>

@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS workout_keyword;
 DROP TABLE IF EXISTS workouts;
 DROP TABLE IF EXISTS keywords;
 
@@ -38,14 +39,14 @@ INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES(
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Cardio and Core Workout", "https://youtu.be/bhsyPi_WM64", "bhsyPi_WM64", 25, 150, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Legs Strengthening Workout", "https://youtu.be/vHWvMTIGJEQ", "vHWvMTIGJEQ", 25, 150, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Yoga for Feeling Calm", "https://youtu.be/AZO3UIJxaro", "AZO3UIJxaro", 10, 35, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Yoga for Feeling Strong", "https://youtu.be/HpbdD_hAmhI", "HpbdD_hAmhI", 10, 50, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Full Body Workout", "https://youtu.be/O_nWCgnBL5U", "O_nWCgnBL5U", 15, 100, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Full Body HIIT", "https://youtu.be/yVrcrOMWdMY", "yVrcrOMWdMY", 17, 100, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Quick Abs Workout", "https://youtu.be/NKyaZKwR7Q8", "NKyaZKwR7Q8", 10, 50, 0);
-
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Dancing Workout", "https://youtu.be/ay6ici05_74", "ay6ici05_74", 10, 50, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Post-Natal Yoga", "https://youtu.be/az-YCJYuDhU", "az-YCJYuDhU", 30, 100, 0);
-INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Yoga for Feeling Strong", "https://youtu.be/HpbdD_hAmhI", "HpbdD_hAmhI", 10, 50, 0);
-
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Cardio and Core Burn", "https://youtu.be/7NkK1YTfcDU", "7NkK1YTfcDU", 33, 200, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Quick HIIT Abs", "https://youtu.be/sk-x1ejsctM", "sk-x1ejsctM", 12, 50, 0);
 
 INSERT INTO keywords(text) VALUES("Kickboxing");
 INSERT INTO keywords(text) VALUES("Yoga");
@@ -60,5 +61,5 @@ INSERT INTO keywords(text) VALUES("Strength");
 INSERT INTO keywords(text) VALUES("HIIT");
 INSERT INTO keywords(text) VALUES("High Impact");
 
+INSERT INTO workout_keyword (WorkoutID, KeywordID) VALUES (1, 1), (15, 1), (2, 2), (5, 2), (8, 2), (9, 2), (10, 2), (11, 2), (12, 2), (21, 2), (24, 2), (25, 2), (30, 2), (3, 3), (14, 3), (17, 3), (4, 4), (10, 4), (26, 4), (27, 4), (16, 5), (18, 5), (22, 6), (31, 6), (5, 7), (12, 7), (13, 8), (28, 8), (32, 8), (17, 9), (23, 9), (19, 10), (23, 10), (4, 11), (7, 11), (20, 11), (27, 11), (32, 11), (1, 12), (9, 12);
 
-INSERT INTO workout_keyword (WorkoutID, KeywordID) VALUES (1, 1), (15, 1), (2, 2), (5, 2), (8, 2), (9, 2), (10, 2), (11, 2), (12, 2), (21, 2), (24, 2), (3, 3), (14, 3), (17, 3), (4, 4), (10, 4), (25, 4), (26, 4), (16, 5), (18, 5), (22, 6), (5, 7), (12, 7), (13, 8), (27, 8), (17, 9), (23, 9), (19, 10), (23, 10), (4, 11), (7, 11), (20, 11), (26, 11), (1, 12), (9, 12);

@@ -36,6 +36,7 @@ const getWorkoutById = async id => {
           <div className='container pt-4'>
     
            <h1 className='text-bold'>All Workouts</h1>
+           <br />
            <div className='container py-2'>
             <div className='row'>
               {workouts.map((workout) => (
