@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -96,8 +95,3 @@ className="button-white btn btn-outline-secondary" type="button" id="button-addo
 )
 }
 
-{/* <ul>
-{results.length > 0 && results.map((r) => (
-  <li key={r.WorkoutID}>{r.title}</li>
-))}
-  </ul> */}

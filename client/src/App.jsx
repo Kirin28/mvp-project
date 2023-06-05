@@ -8,10 +8,13 @@ import Homepage from './components/Homepage';
 import { Routes, Route, Link } from "react-router-dom";
 import SearchResults from './components/SearchResults';
 import Footer from './components/Footer';
+import 'google-fonts';
 
 function App() {
 
   const [results, setResults] = useState ([]);
+
+
 
   return (
     <>
@@ -33,8 +36,8 @@ function App() {
       </Navbar>
 <Routes>
   <Route path="/" element={<Homepage results={results} setResults={setResults}/>} />
-  <Route path='/search' element={<SearchResults results={results} setResults={setResults}/>}/>
-  <Route path="/workouts" element={<ListWorkouts/>} />
+  <Route path='/search/:query' element={<SearchResults results={results} setResults={setResults}/>}/>
+  <Route path="/workouts" element={<ListWorkouts workouts={results} setWorkouts={results}/>} />
   <Route path="/admin" element={<Admin/>} />
 </Routes>
   

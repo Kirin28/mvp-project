@@ -4,15 +4,14 @@ import gymimage from './assets/Group_2.1.png'
 import grainimage from './assets/group_2.2.png'
 import gymimage2 from './assets/group_2.3.png'
 import axios from 'axios';
-import SearchResults from './SearchResults';
 import { useNavigate } from 'react-router-dom';
 
 export default function Homepage({results, setResults}) {
 
   const navigate = useNavigate();  
   const [query, setQuery] = useState ("");
-  //const [results, setResults] = useState ([]);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
 
 
   const getWorkouts =  async () => { 
@@ -35,7 +34,7 @@ export default function Homepage({results, setResults}) {
     getWorkouts();
     setQuery("");
     setError("");
-    navigate('/search');
+    navigate(`/search/${query}`);
   }
   };
 
@@ -78,8 +77,8 @@ setQuery(value);
 <div className='container'>
 <div className='row pt-2'>
   <div className='col-lg-4 py-1'>
-  <div className="card" style={{width: "18rem"}}>
-  <img src={gymimage}  style={{height: "100%"}} className="card-img-top" alt="..."/>
+  <div className="card h-100">
+  <img src={gymimage} className="card-img-top img-fluid" alt="..."/>
   <div className="card-body " style={{height: "200px"}}>
     <p className="card-text fw-semibold">Welcome to Forever Active, your ultimate destination for fitness enthusiasts! Our homepage offers a comprehensive collection Adidas and Nike workout videos right at your fingertips.</p>
   </div>
@@ -88,18 +87,18 @@ setQuery(value);
   
 
   <div className='col-lg-4 py-1'>
-  <div className="card" style={{width: "18rem"}}>
-  <img src={grainimage} style={{height: "100%"}} className="card-img-top" alt="..."/>
-  <div className="card-body" style={{height: "200px"}}>
+  <div className="card h-100">
+  <img src={grainimage} className="card-img-top img-fluid" alt="..."/>
+  <div className="card-body">
     <p className="card-text fw-semibold">Once you've found your ideal workout video, you can watch it directly on our website. Alternatively, we provide a convenient redirection to YouTube, allowing you to access the video on their platform if you prefer.</p>
   </div>
 </div>
     </div>
     
     <div className='col-lg-4 py-1'>
-    <div className="card" style={{width: "18rem"}}>
-  <img src={gymimage2} style={{height: "223px"}} className="card-img-top" alt="..."/>
-  <div className="card-body" style={{height: "200px"}}>
+    <div className="card h-100">
+  <img src={gymimage2} className="card-img-top img-fluid" alt="..."/>
+  <div className="card-body">
     <p className="card-text fw-semibold">Join our community of fitness enthusiasts and take your workout journey to new heights. Embrace the power of exercise, challenge yourself, and achieve your fitness goals with our comprehensive workout video library!</p>
   </div>
 </div>
@@ -107,7 +106,8 @@ setQuery(value);
 
      </div>
      </div>
-     
+     <br />
+     <p className='fw-semibold text-center my-2 py-2'>All workout videos are a property of Adidas Runtastic and Nike Training Club.</p>
 <div className='mb-4'></div>
 
      </div>
