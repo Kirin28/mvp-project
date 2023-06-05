@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
     return (
         <div>
-             <footer className="footer">
+             <footer className="footer bott">
       <div className="container">
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
    

@@ -41,7 +41,7 @@ function App() {
   <Route path="/admin" element={<Admin/>} />
 </Routes>
   
-<div className="myFooter">
+<div className="myFooter footer-sticky">
         <main></main>
       <Footer />
       </div>

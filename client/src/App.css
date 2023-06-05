@@ -79,3 +79,17 @@ object-fit: cover;
 main {
   flex-grow: 1;
 }
+
+html, body {
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-sticky {
+  margin-top: auto;
+}
