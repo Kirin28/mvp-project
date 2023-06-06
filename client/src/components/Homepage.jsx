@@ -62,6 +62,7 @@ setQuery(value);
   type="search" 
   className="form-control border border-secondary shadow-none py-2" placeholder="Search..." aria-label="Search..." aria-describedby="button-addon2"/>
   <button 
+  onClick={handleSubmit}
   className="button-white btn btn-outline-secondary" type="button" id="button-addon2">
   <i className="fas fa-search"></i>
   </button>
@@ -79,7 +80,7 @@ setQuery(value);
   <div className='col-lg-4 py-1'>
   <div className="card h-100">
   <img src={gymimage} className="card-img-top img-fluid" alt="..."/>
-  <div className="card-body " style={{height: "200px"}}>
+  <div className="card-body ">
     <p className="card-text fw-semibold">Welcome to Forever Active, your ultimate destination for fitness enthusiasts! Our homepage offers a comprehensive collection Adidas and Nike workout videos right at your fingertips.</p>
   </div>
 </div>

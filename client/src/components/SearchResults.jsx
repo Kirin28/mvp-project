@@ -63,6 +63,7 @@ className="button-white btn btn-outline-secondary" type="button" id="button-addo
  </div>
 
  </div>
+ <br />
  {error && <p style={{color: "red", fontSize: "80%"}}>{error}</p>}
         <div className='container py-2'>
             <div className='row'>
