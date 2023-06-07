@@ -35,7 +35,7 @@ export default function Admin() {
 
       const handleSubmit = async event => {
         event.preventDefault();
-        if (! posts.title && !posts.url && !posts.embedID && !posts.minutes && !posts.calories) {
+        if (! posts.title || !posts.url || !posts.embedID || !posts.minutes || !posts.calories) {
           setErrorMessage("Please fill out the fields");
         } else {
           await addWorkout();

@@ -51,8 +51,3 @@ function App() {
 
 export default App
 
-{/* <footer>
-      <div className="text-center py-2 mt-4 fixed-bottom" style={{backgroundColor: "white"}}>
-      &copy; {new Date().getFullYear()} Forever Active
-</div>
-      </footer> */}
