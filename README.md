@@ -36,7 +36,7 @@ The users are able to watch workouts either on the website and be redirected to 
 
 - To get to the homepage, open Postman, create a new GET request and enter `http://localhost:4000/api`.
 - To get the list of workouts, enter `http://localhost:4000/api/workouts`.
-- The POST request should be handled in `http://localhost:4000/api/workouts`.
+- The POST request should be handled at `http://localhost:4000/api/workouts`.
 - To access the workouts based on a keyword, open a new tab on Postman, enter `http://localhost:4000/api/search`, then click on Params -> Query Params and find the fields 'Key' and 'Value'. Type 'keyword' in the Key field. The value is any of the 12 keywords that you will find in the 'keywords' SQL table. 
 
 ### Other Dependencies
