@@ -11,7 +11,6 @@ export default function Homepage({results, setResults}) {
   const navigate = useNavigate();  
   const [query, setQuery] = useState ("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(true);
 
 
   const getWorkouts =  async () => { 

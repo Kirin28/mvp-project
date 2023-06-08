@@ -30,6 +30,7 @@ export default function SearchResults({results, setResults}) {
     getWorkouts();
     setQuery("");
     setError("");
+    navigate(`/search/${query}`);
   }
   };
 
