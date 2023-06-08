@@ -15,7 +15,7 @@ router.get('/', async function (req, res, next) {
     }
   })
 
-//get junction id?
+//just in case
   router.get('/:id', async function (req, res, next) {
     try {
       const result = await db(`SELECT * FROM workout_keyword WHERE id = ${req.params.id};`);

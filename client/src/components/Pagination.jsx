@@ -35,4 +35,4 @@ export const Pagination = ({totalPosts, itemsPerPage, setCurrentPage, currentPag
 }
 
 
-//type rfc 
+
