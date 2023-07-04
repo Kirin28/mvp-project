@@ -8,19 +8,22 @@ var indexRouter = require('./routes/index');
 var workoutsRouter = require('./routes/workouts');
 var searchRouter = require('./routes/search');
 var keyRouter = require('./routes/keywords');
+var usersRouter = require('./routes/users');
 
 var app = express();
 
-app.use(cors());
-app.use(logger('dev'));
-app.use(express.json());
+app.use(cors()); //enables Cross-Origin Resource Sharing
+app.use(logger('dev')); //logs HTTP requests
+app.use(express.json()); //parses incoming JSON data
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser()); //handles cookies
 //app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', indexRouter);
 app.use('/api/workouts', workoutsRouter);
 app.use('/api/search', searchRouter);
 app.use('/api/keywords', keyRouter);
+app.use('/api/users', usersRouter);
+
 
 module.exports = app;
