@@ -33,7 +33,6 @@ CREATE TABLE users(
 );
 
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("High Impact Kickboxing Workout", "https://youtu.be/qGuAQX39y6E", "qGuAQX39y6E", 23, 180, 0);
-INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Gentle Yoga Flow", "https://youtu.be/ZvQ-5ad-6Qo", "ZvQ-5ad-6Qo", 20, 100, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Booty Workout", "https://youtu.be/XCTYwFKHsOA", "XCTYwFKHsOA", 15, 70, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("HIIT Full Body Workout", "https://youtu.be/05HTb-oA5s4", "05HTb-oA5s4", 16, 100, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Yoga Recovery Workout", "https://youtu.be/ZbuU0_Siul4", "ZbuU0_Siul4", 15, 60, 0);
@@ -43,13 +42,6 @@ INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES(
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("High Impact Yoga", "https://youtu.be/nsmq04gQyn0", "nsmq04gQyn0", 10, 45, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Full Body Yoga", "https://youtu.be/cmRz6Q8DOrA", "cmRz6Q8DOrA", 12, 40, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Hip Mobility Yoga", "https://youtu.be/65KVj8EMJIc", "65KVj8EMJIc", 14, 50, 0);
-INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Yoga for Recovery", "https://youtu.be/tcSDpenhuMo", "tcSDpenhuMo", 20, 70, 0);
-INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Abs Workout", "https://youtu.be/yNC2ewTn6Bw", "yNC2ewTn6Bw", 15, 130, 0);
-INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Thighs and Booty Burn", "https://youtu.be/CxuAYfeA9X8", "CxuAYfeA9X8", 15, 130, 0);
-INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Kickboxing", "https://youtu.be/6RfOb9_9_t4", "6RfOb9_9_t4", 15, 130, 0);
-INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Total Body Workout", "https://youtu.be/JqynUEhocf8", "JqynUEhocf8", 15, 130, 0);
-INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Legs and Booty Workout", "https://youtu.be/dxHNhqA8Bhg", "dxHNhqA8Bhg", 20, 170, 0);
-INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Total Body Workout", "https://youtu.be/yOpKjRIMEtY", "yOpKjRIMEtY", 25, 180, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Strength Workout", "https://youtu.be/0mXRt9UmoZA", "0mXRt9UmoZA", 20, 120, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("HIIT Workout with a Buddy", "https://youtu.be/qw32DPzSEHo", "qw32DPzSEHo", 20, 120, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Yoga for Runners", "https://youtu.be/hYwSJk3H61M", "hYwSJk3H61M", 30, 100, 0);
@@ -59,11 +51,22 @@ INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES(
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Yoga for Feeling Strong", "https://youtu.be/HpbdD_hAmhI", "HpbdD_hAmhI", 10, 50, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Full Body Workout", "https://youtu.be/O_nWCgnBL5U", "O_nWCgnBL5U", 15, 100, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Full Body HIIT", "https://youtu.be/yVrcrOMWdMY", "yVrcrOMWdMY", 17, 100, 0);
-INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Quick Abs Workout", "https://youtu.be/NKyaZKwR7Q8", "NKyaZKwR7Q8", 10, 50, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Dancing Workout", "https://youtu.be/ay6ici05_74", "ay6ici05_74", 10, 50, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Post-Natal Yoga", "https://youtu.be/az-YCJYuDhU", "az-YCJYuDhU", 30, 100, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Cardio and Core Burn", "https://youtu.be/7NkK1YTfcDU", "7NkK1YTfcDU", 33, 200, 0);
 INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Quick HIIT Abs", "https://youtu.be/sk-x1ejsctM", "sk-x1ejsctM", 12, 50, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Push and Pull Basics", "https://youtu.be/5IdGmBbVe8k", "5IdGmBbVe8k", 24, 200, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Breakthrough HIIT & Core", "https://youtu.be/zTyd0IIgVSk", "zTyd0IIgVSk", 40, 400, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Bodyweight Burn", "https://youtu.be/q8ovI5i7FUE", "q8ovI5i7FUE", 20, 200, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Focus and Flow Yoga", "https://youtu.be/74fiZ7o0AM4", "74fiZ7o0AM4", 30, 150, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Gentle Yoga", "https://youtu.be/orYFAtGirkw", "orYFAtGirkw", 18, 90, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Abs Workout", "https://youtu.be/L28GQuOCaUQ", "L28GQuOCaUQ", 20, 150, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Leg Power Up", "https://youtu.be/mYtJhi4tQm4", "mYtJhi4tQm4", 37, 350, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("HIIT & Core Workout", "https://youtu.be/ScDKi5z52-0", "ScDKi5z52-0", 20, 200, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Rise & Flow Yoga ", "https://youtu.be/qc62p33LTNo", "qc62p33LTNo", 14, 50, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Total Body Blast", "https://youtu.be/E4FNg3lkxTw", "E4FNg3lkxTw", 30, 300, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Total Body Blast", "https://youtu.be/WWtZKGWrxPU", "WWtZKGWrxPU", 28, 300, 0);
+INSERT INTO workouts(title, url, embedID, minutes, calories, iscomplete) VALUES("Kickboxing Workout", "https://youtu.be/ultvOOiAHrM", "ultvOOiAHrM", 25, 300, 0);
 
 INSERT INTO keywords(text) VALUES("Kickboxing");
 INSERT INTO keywords(text) VALUES("Yoga");
@@ -78,5 +81,6 @@ INSERT INTO keywords(text) VALUES("Strength");
 INSERT INTO keywords(text) VALUES("HIIT");
 INSERT INTO keywords(text) VALUES("High Impact");
 
-INSERT INTO workout_keyword (WorkoutID, KeywordID) VALUES (1, 1), (15, 1), (2, 2), (5, 2), (8, 2), (9, 2), (10, 2), (11, 2), (12, 2), (21, 2), (24, 2), (25, 2), (30, 2), (3, 3), (14, 3), (17, 3), (4, 4), (10, 4), (26, 4), (27, 4), (16, 5), (18, 5), (22, 6), (31, 6), (5, 7), (12, 7), (13, 8), (28, 8), (32, 8), (17, 9), (23, 9), (19, 10), (23, 10), (4, 11), (7, 11), (20, 11), (27, 11), (32, 11), (1, 12), (9, 12);
+INSERT INTO workout_keyword (WorkoutID, KeywordID) VALUES (1, 1), (35, 1), (4, 2), (7, 2), (8, 2), (9, 2), (10, 2), (13, 2), (16, 2), (17, 2), (21, 2), (27, 2), (28, 2), (32, 2), (2, 3), (3, 4), (9, 4), (18, 4), (19, 4), (33, 5), (34, 5), (14, 6), (22, 6), (25, 6), (31, 6), (4, 7), (23, 8), (29, 8), (15, 9), (11, 10), (15, 10), (3, 11), (6, 11), (12, 11), (19, 11), (23, 11), (25, 11), (31, 11), (1, 12), (8, 12);
+
 

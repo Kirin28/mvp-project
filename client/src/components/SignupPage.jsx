@@ -51,7 +51,7 @@ export default function SignUp() {
   return (
     <>
     <div className='container pt-4'>
-      <h1 className='text-bold my-2'>Sign Up</h1>
+      <h1 className='text-bold my-2'>Sign up</h1>
       <div className="row">
       <form 
       className='container-md py-2'

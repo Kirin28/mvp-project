@@ -188,6 +188,11 @@ export default function LoginPage() {
             </form>
           </div>
         )}
+          {auth.signupResponse && auth.signupResponse.status === 400 && (
+          <p className='py-2 error'>
+            {}
+          </p>
+        )}
         </div>
         <br />
       </>
