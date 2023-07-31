@@ -55,13 +55,13 @@ routes.push({
 });
 routes.push({
   to: '/login',
-  text: 'Login',
+  text: 'Sign In',
   private: false,
   publicOnly: true,
 });
 routes.push({
   to: '/signup',
-  text: 'Sign-up',
+  text: 'Sign Up',
   private: false,
   publicOnly: true,
 });
@@ -73,6 +73,6 @@ routes.push({
 });
 routes.push({
   to: '/logout',
-  text: 'Logout',
+  text: 'Sign Out',
   private: true,
 });

@@ -55,9 +55,9 @@ export default function ProfilePage() {
 
   return (
     <>
-      <div>
-        <h1>Profile</h1>
-        <p>Welcome, {auth.user.username}</p>
+      <div className='container pt-4'>
+        <h1 className='text-bold'>Profile</h1>
+        <p className='txt-big'>Welcome, {auth.user.username}!</p>
       </div>
 
       <div>
@@ -98,22 +98,22 @@ export default function ProfilePage() {
                       </div>
 
                       {auth.user && (
-                        <div>
+                        <div className='text-center'>
                           {auth.user.favoriteWorkouts.includes(workout.id) ? (
                             <button
                               type="button"
-                              className="btn btn-primary btn-sm"
+                              className="btn btn-primary"
                               onClick={() => removeFromFavorites(workout.id)}
                             >
-                              Remove
+                               <i className="fa-solid fa-trash-can"></i>
                             </button>
                           ) : (
                             <button
                               type="button"
-                              className="btn btn-primary btn-sm"
+                              className="btn btn-danger"
                               onClick={() => addToFavorites(workout.id)}
                             >
-                              Favorite
+                               <i className="fa-solid fa-heart"></i>
                             </button>
                           )}
                         </div>

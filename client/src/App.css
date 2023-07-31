@@ -93,3 +93,11 @@ html, body {
 .footer-sticky {
   margin-top: auto;
 }
+.txt-big{
+  font-size: 20px;
+}
+.error{
+  text-align: center;
+  font-size: 15px;
+  color: red;
+}

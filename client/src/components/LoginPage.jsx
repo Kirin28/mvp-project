@@ -89,7 +89,7 @@ export default function LoginPage() {
       return <Navigate to="/profile" />;
     }
   
-    const handleUsernameChange = (e) => {
+ /*    const handleUsernameChange = (e) => {
       const formattedUsername = e.target.value.trim().toLowerCase();
       setUserName(formattedUsername);
     };
@@ -102,44 +102,94 @@ export default function LoginPage() {
     const handleNewPasswordChange = (e) => {
       const formattedNewPassword = e.target.value.replace(/\s/g, '');
       setNewPassword(formattedNewPassword);
+    }; */
+    const handleUsernameChange = (e) => {
+      const formattedUsername = e.target.value.trim().toLowerCase();
+      setUserName(formattedUsername);
+    };
+  
+    const handlePasswordChange = (e) => {
+      const formattedPassword = e.target.value;
+      setPassword(formattedPassword);
+    };
+  
+    const handleNewPasswordChange = (e) => {
+      const formattedNewPassword = e.target.value;
+      setNewPassword(formattedNewPassword);
     };
   
     return (
       <>
+      <div className='container pt-4'>
         {!isPasswordForgotten && (
           <div>
-            <h1>Login</h1>
-            <form onSubmit={login}>
+            <h1 className='text-bold my-2'>Sign in</h1>
+            <div className="row">
+            <form 
+            className='container-md py-2'
+            onSubmit={login}>
+
+              <div className="col-sm-4 offset-sm-4 mt-2 mb-4">
               <label>Username</label>
-              <input value={username} onChange={handleUsernameChange} />
+              <input className="form-control" value={username} onChange={handleUsernameChange} />
+              </div>
+
+              <div className="col-sm-4 offset-sm-4 mt-2 mb-4">
               <label>Password</label>
               <input
+                className="form-control"
                 value={password}
                 onChange={handlePasswordChange}
                 type="password"
               />
-              <button type="submit">Login</button>
+              </div>
+              <div className='text-center'>
+              <button 
+              className="btn btn-danger"
+              type="submit">Sign in</button>
+              </div>
             </form>
-            <button onClick={() => setIsPasswordForgotten(true)}>
+            </div>
+            <div className='text-center pt-3'>
+            <button 
+              className="btn btn-outline-danger"
+              onClick={() => setIsPasswordForgotten(true)}>
               Forgot your password?
             </button>
           </div>
+          </div>
         )}
         {isPasswordForgotten && (
-          <div>
-            <form onSubmit={resetPassword}>
+          <div className='row'>
+            <form 
+             className='container-md py-2'
+             onSubmit={resetPassword}>
+              <div className="col-sm-4 offset-sm-4 mt-2 mb-4">
               <label>Username</label>
-              <input value={username} onChange={handleUsernameChange} />
+              <input 
+              className='form-control'
+              value={username} onChange={handleUsernameChange} />
+              </div>
+
+              <div className="col-sm-4 offset-sm-4 mt-2 mb-4">
               <label>Type New Password</label>
               <input
+                className='form-control'
                 value={newPassword}
                 onChange={handleNewPasswordChange}
                 type="password"
               />
-              <button type="submit">Reset Password</button>
+              </div>
+              <div className='text-center'>
+              <button 
+              className="btn btn-danger"
+              type="submit">Reset Password</button>
+              </div>
             </form>
           </div>
         )}
+        </div>
+        <br />
       </>
     );
 }

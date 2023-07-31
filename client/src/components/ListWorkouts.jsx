@@ -91,22 +91,22 @@ export default function ListWorkouts() {
                     </div>
 
                     {auth.user && (
-                      <div>
+                      <div className='text-center'>
                         {auth.user.favoriteWorkouts.includes(workout.id) ? (
                           <button
                             type="button"
-                            className="btn btn-primary btn-sm"
+                            className="btn btn-primary"
                             onClick={() => removeFromFavorites(workout.id)}
                           >
-                            Remove
+                            <i className="fa-solid fa-trash-can"></i>
                           </button>
                         ) : (
                           <button
                             type="button"
-                            className="btn btn-primary btn-sm"
+                            className="btn btn-danger"
                             onClick={() => addToFavorites(workout.id)}
                           >
-                            Favorite
+                           <i className="fa-solid fa-heart"></i>
                           </button>
                         )}
                       </div>

@@ -9,11 +9,16 @@ export default function LogoutPage() {
   };
   return (
     <>
-      <h1>Logout</h1>
+    <div className='container pt-4'>
+      <h1 className='text-bold pb-2'>Sign out</h1>
       <form onSubmit={logout}>
-        <label>Are you sure?</label>
-        <button type="submit">Logout</button>
+        <h5>Are you sure?</h5>
+        <button 
+        type="submit"
+        className="btn btn-danger mt-2"
+        >Sign out</button>
       </form>
+      </div>
     </>
   );
 }
