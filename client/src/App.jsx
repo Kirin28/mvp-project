@@ -9,7 +9,7 @@ import AuthProvider, { AuthRoute } from './components/auth';
 
 // Styles and Assets
 import './App.css';
-import 'google-fonts';
+//import 'google-fonts';
 
 // Components
 import Footer from './components/Footer';
