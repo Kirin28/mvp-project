@@ -8,7 +8,7 @@ import { useAuth } from './auth';
 import { Link } from 'react-router-dom';
 
 // Styles and Assets
-import { Navbar, Nav, Container, Row } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import logo from '../assets/logo.png';
 
 export default function LoginPage() {
