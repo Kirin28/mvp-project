@@ -12,6 +12,7 @@ const con = mysql.createConnection({
   user: DB_USER || "root",
   password: DB_PASS,
   database: DB_NAME || "workouts",
+  port: '3306',
   multipleStatements: true
 });
 
