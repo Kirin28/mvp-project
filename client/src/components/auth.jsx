@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 // React Router
 import { useNavigate, Navigate } from 'react-router-dom';
@@ -68,7 +69,6 @@ function AuthProvider({ children }) { //is a wrapper component that provides aut
 
       // Store the token locally
       localStorage.setItem('token', response.data.token);
-      console.log(response.data.message, response.data.token);
       const requestedData = await requestData();
       setUser(requestedData); // Update the user state
       setLoginResponse({
@@ -176,7 +176,7 @@ function AuthProvider({ children }) { //is a wrapper component that provides aut
   };
 
   const logout = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     setData(null);
     setUser(null);
     setSignupResponse({

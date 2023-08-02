@@ -56,6 +56,7 @@ onChange={handleInputChange}
 type="search" 
 className="form-control border border-secondary shadow-none py-2" placeholder="Search..." aria-label="Search..." aria-describedby="button-addon2"/>
 <button
+onClick={handleSubmit}
 className="button-white btn btn-outline-secondary" type="button" id="button-addon2">
 <i className="fas fa-search"></i>
 </button>
