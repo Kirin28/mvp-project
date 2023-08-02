@@ -104,7 +104,7 @@ export default function LoginPage() {
       setNewPassword(formattedNewPassword);
     }; */
     const handleUsernameChange = (e) => {
-      const formattedUsername = e.target.value.trim().toLowerCase();
+      const formattedUsername = e.target.value.trim();
       setUserName(formattedUsername);
     };
   
