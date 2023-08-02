@@ -17,7 +17,8 @@ app.use(logger('dev')); //logs HTTP requests
 app.use(express.json()); //parses incoming JSON data
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser()); //handles cookies
-//app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(express.static(path.join(__dirname, '/client/dist')));
 
 app.use('/api', indexRouter);
 app.use('/api/workouts', workoutsRouter);
@@ -25,5 +26,8 @@ app.use('/api/search', searchRouter);
 app.use('/api/keywords', keyRouter);
 app.use('/api/users', usersRouter);
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/client/dist/index.html"));
+});
 
 module.exports = app;
